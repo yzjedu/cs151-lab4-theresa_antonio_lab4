@@ -18,29 +18,26 @@
 #Package Purple:
 #For $99.95/month, unlimited data is provided.
 
-color_package = str(input('enter a color of one of the packages listed'))
+color_package = str(input('Enter a color of one of the packages listed: ')).lower().lower()
 
-print (color_package.lower())
-
-while color_package != 'green' and 'blue' and 'purple':
+while color_package not in ('green', 'blue', 'purple'):
     color_package = str(input('enter one of the color packages listed'))
     print (color_package.lower())
 
-total_monthly_data = int(input('enter data used in month'))
+total_monthly_data = int(input('enter data used in month:'))
 
-if color_package = green:
+if color_package == 'green':
    money_owed = 49.99 + ((total_monthly_data -2) * 15)
-                         if money_owed >= 75:
-                             money_owed =  money_owed - 20
-                         else:
-                             money_owed = money_owed
-elif color_package = blue:
-    money_owed = 70 + ((total_monthly_data - 4) * 10))
-else:
+   if money_owed >= 75:
+         money_owed =  money_owed - 20
+elif color_package == 'blue':
+    money_owed = 70 + ((total_monthly_data - 4) * 10)
+elif color_package == 'purple':
     money_owed = 99.95
 
-print ('Data Used:', total_monthly_data, 'GB')
-print f'{money_owed:.2f} 'owed'')
+print(f'Data Used: {total_monthly_data} GB')
+print(f'Money Owed: ${money_owed:.2f}')
+
 
 
 
