@@ -20,9 +20,10 @@
 
 color_package = str(input('Enter a color of one of the packages listed: ')).lower().lower()
 
-while color_package not in ('green', 'blue', 'purple'):
+while color_package != 'green' and color_package !=  'blue' and color_package != 'purple':
     color_package = str(input('enter one of the color packages listed'))
-    print (color_package.lower())
+    color_package = color_package.lower()
+
 
 total_monthly_data = int(input('enter data used in month:'))
 
