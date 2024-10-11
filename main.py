@@ -18,26 +18,45 @@
 #Package Purple:
 #For $99.95/month, unlimited data is provided.
 
-color_package = str(input('Enter a color of one of the packages listed: ')).lower().lower()
 
-while color_package != 'green' and color_package !=  'blue' and color_package != 'purple':
-    color_package = str(input('enter one of the color packages listed'))
-    color_package = color_package.lower()
+print('Hello! This program will calculate the total amount of money owed at the end of a month.  ')
+
+#Prompt to input package color
+color_package = str(input('Please enter a color of one of the packages listed: ')).lower().lower()
+
+#While loop for if input data is not valid
+while color_package not in ('green', 'blue', 'purple'):
+    color_package = str(input('Please enter one of the color packages listed: '))
+    print (color_package.lower())
+
+#Prompt to input GB used in a month
+total_monthly_data = int(input('Please enter data (GB) used in month: '))
+while total_monthly_data == "":
+    print('Please enter a valid number of Data')
+    total_monthly_data = int(input('Please enter data (GB) used in month: '))
 
 
-total_monthly_data = int(input('enter data used in month:'))
 
+#If package color is green
 if color_package == 'green':
    money_owed = 49.99 + ((total_monthly_data -2) * 15)
-   if money_owed >= 75:
+   coupon= str(input('Do you have a coupon?: ')).lower().replace(' ','')
+   while coupon not in ('yes', 'no'):
+       print('Please enter either yes or no')
+   if coupon == 'yes' and money_owed >= 75:
          money_owed =  money_owed - 20
+
+#If package color is blue
 elif color_package == 'blue':
     money_owed = 70 + ((total_monthly_data - 4) * 10)
+
+#If package color is purple
 elif color_package == 'purple':
     money_owed = 99.95
 
-print(f'Data Used: {total_monthly_data} GB')
-print(f'Money Owed: ${money_owed:.2f}')
+#Data output
+print(f'The number of Data Used was: {total_monthly_data} GB')
+print(f'The amount of Money Owed is: ${money_owed:.2f}')
 
 
 
