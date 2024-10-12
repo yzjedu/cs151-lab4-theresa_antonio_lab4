@@ -5,7 +5,7 @@
 2. Ask user to input their color package
 3. Set input to lowercase 
 3. while color package is not blue, green or purple, 
-   1.ask user to input color package again.
+   1. ask user to input color package again.
    4. set input to lowercase
 3. If user enters green:
    5. If total_gb used in month is greater than 2:
